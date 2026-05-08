@@ -5,71 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GGS Driver & Firmware</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#f0f0f0;font-family:'Barlow',sans-serif;color:#111;padding-bottom:60px}
+body{background:#efefef;font-family:'Barlow',sans-serif;color:#111;padding-bottom:60px}
 
-/* HEADER */
-.hd{background:#fff;border-bottom:3px solid #D01A24;padding:14px 32px;display:flex;align-items:center}
+.hd{background:#fff;border-bottom:3px solid #D01A24;padding:13px 32px;display:flex;align-items:center}
 .hd img{height:46px;width:auto;display:block;flex-shrink:0}
 .hd-sep{width:1px;height:42px;background:#e0e0e0;flex-shrink:0;margin:0 20px}
-.hd-label{font-family:'Barlow',sans-serif;font-size:10px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:2px}
-.hd-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.02em;color:#111;line-height:1}
+.hd-label{font-family:'Barlow',sans-serif;font-size:9px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:#bbb;display:block;margin-bottom:1px}
+.hd-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.01em;color:#111;line-height:1;transform:skewX(-2deg);display:inline-block}
 .hd-title em{color:#D01A24;font-style:italic}
 
-/* RED BAND - mimics GGS footer style */
-.band{background:#D01A24;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-.band-l .sub{font-family:'Barlow',sans-serif;font-size:10px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);display:block;margin-bottom:2px}
-.band-l strong{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.01em;color:#fff;line-height:1;display:block}
+.band{background:#1a0608;padding:15px 32px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.band::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:#D01A24}
+.band-l .sub{font-family:'Barlow',sans-serif;font-size:9px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:3px}
+.band-l strong{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.01em;color:#fff;line-height:1;display:block}
+.band-l strong em{color:#D01A24;font-style:italic}
 .band-r{display:flex;gap:24px}
 .stat{text-align:center;color:#fff}
-.stat .n{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;line-height:1}
-.stat .l{font-size:9px;font-weight:300;letter-spacing:.1em;opacity:.65;text-transform:uppercase;margin-top:1px}
+.stat .n{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:900;font-style:italic;line-height:1}
+.stat .l{font-size:9px;font-weight:400;letter-spacing:.12em;opacity:.4;text-transform:uppercase;margin-top:1px}
 
-/* CONTROLS */
-.ctrl{background:#fff;border-bottom:1px solid #e5e5e5;padding:14px 32px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctrl{background:#fff;border-bottom:1px solid #e5e5e5;padding:12px 32px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .sw{position:relative;flex:1;min-width:160px}
 .sw i{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:15px;color:#bbb;pointer-events:none}
-.sw input{width:100%;border:1.5px solid #e5e5e5;border-radius:5px;padding:8px 10px 8px 34px;font-family:'Barlow',sans-serif;font-size:13px;color:#111;outline:none;background:#fafafa;transition:border-color .15s}
+.sw input{width:100%;border:1.5px solid #e5e5e5;border-radius:4px;padding:8px 10px 8px 34px;font-family:'Barlow',sans-serif;font-size:13px;color:#111;outline:none;background:#fafafa;transition:border-color .15s}
 .sw input:focus{border-color:#D01A24;background:#fff}
-.sw input::placeholder{color:#111;font-style:italic}
-.fb{border:1.5px solid #e5e5e5;border-radius:5px;padding:7px 14px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;font-style:italic;letter-spacing:.06em;text-transform:uppercase;color:#888;cursor:pointer;background:#fafafa;transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.sw input::placeholder{color:#ccc}
+.fb{border:1.5px solid #e5e5e5;border-radius:4px;padding:7px 16px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:900;font-style:italic;letter-spacing:.02em;text-transform:uppercase;color:#888;cursor:pointer;background:#fafafa;transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap;line-height:1}
 .fb i{font-size:14px;font-style:normal}
 .fb:hover{border-color:#D01A24;color:#D01A24;background:#fff}
 .fb.on{background:#D01A24;border-color:#D01A24;color:#fff}
 
-/* META */
 .meta{padding:10px 32px 2px}
-.meta p{font-family:'Barlow',sans-serif;font-size:11px;color:#aaa;font-weight:300;letter-spacing:.03em}
-.meta b{color:#D01A24;font-weight:600}
+.meta p{font-family:'Barlow',sans-serif;font-size:11px;color:#aaa;font-weight:400;letter-spacing:.02em}
+.meta b{color:#D01A24;font-weight:700}
 
-/* GRID */
 .grid{padding:10px 32px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:8px}
-.card{background:#fff;border:1.5px solid #e8e8e8;border-radius:6px;padding:12px 14px;display:flex;align-items:center;gap:12px;transition:all .15s;position:relative;overflow:hidden}
+.card{background:#fff;border:1.5px solid #e8e8e8;border-radius:5px;padding:12px 14px;display:flex;align-items:center;gap:12px;transition:all .15s;position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D01A24;transform:scaleY(0);transition:transform .18s;transform-origin:center}
-.card:hover{border-color:#D01A24;box-shadow:2px 3px 16px rgba(208,26,36,.08)}
+.card:hover{border-color:#D01A24;box-shadow:2px 4px 16px rgba(208,26,36,.08)}
 .card:hover::before{transform:scaleY(1)}
 .card.gone{display:none}
-.ic{width:36px;height:36px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.ic{width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
 .m{background:#fff0f0;color:#D01A24}.k{background:#eef2ff;color:#3a6fd8}.b{background:#edfff3;color:#2a9e4e}.o{background:#fffbee;color:#b87d10}
 .inf{flex:1;min-width:0}
-.bn{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;font-style:italic;letter-spacing:.02em;text-transform:uppercase;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tg{display:inline-block;font-family:'Barlow',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-top:3px}
+.bn{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;font-style:italic;letter-spacing:-.01em;text-transform:uppercase;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1}
+.tg{display:inline-block;font-family:'Barlow',sans-serif;font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-top:4px}
 .tg.m{background:#fff0f0;color:#D01A24}.tg.k{background:#eef2ff;color:#3a6fd8}.tg.b{background:#edfff3;color:#2a9e4e}.tg.o{background:#fffbee;color:#b87d10}
 .lks{display:flex;gap:5px;flex-shrink:0}
-.lb{background:#f5f5f5;border:1.5px solid #e5e5e5;border-radius:4px;padding:6px 11px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;font-style:italic;letter-spacing:.05em;text-transform:uppercase;color:#666;text-decoration:none;display:flex;align-items:center;gap:4px;transition:all .15s;white-space:nowrap}
+.lb{background:#f5f5f5;border:1.5px solid #e5e5e5;border-radius:4px;padding:6px 12px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;font-style:italic;letter-spacing:.03em;text-transform:uppercase;color:#555;text-decoration:none;display:flex;align-items:center;gap:4px;transition:all .15s;white-space:nowrap;line-height:1}
 .lb i{font-size:12px;font-style:normal}
 .lb:hover{background:#D01A24;border-color:#D01A24;color:#fff}
 .empty{grid-column:1/-1;text-align:center;padding:52px 20px;color:#ccc;display:none}
 .empty i{font-size:38px;display:block;margin-bottom:10px}
-.empty p{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-style:italic;letter-spacing:.05em;text-transform:uppercase}
+.empty p{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-style:italic;font-weight:900;letter-spacing:.03em;text-transform:uppercase}
 
-/* FOOTER */
 .ft{margin:28px 32px 0;padding-top:18px;border-top:1.5px solid #e5e5e5;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.ft-l{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;font-style:italic;letter-spacing:.08em;text-transform:uppercase;color:#ccc}
+.ft-l{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;font-style:italic;letter-spacing:.06em;text-transform:uppercase;color:#111}
 .ft-l span{color:#D01A24}
-.ft-r{font-family:'Barlow',sans-serif;font-size:10px;color:#ccc;font-weight:300;letter-spacing:.04em}
+.ft-r{font-family:'Barlow',sans-serif;font-size:10px;color:#111;font-weight:400;letter-spacing:.03em}
 </style>
 </head>
 <body>
@@ -86,7 +82,7 @@ body{background:#f0f0f0;font-family:'Barlow',sans-serif;color:#111;padding-botto
 <div class="band">
   <div class="band-l">
     <span class="sub">GGS Download Center</span>
-    <strong>Find Your Gear&#39;s Software</strong>
+    <strong>Find Your Gear&#39;s <em>Software</em></strong>
   </div>
   <div class="band-r">
     <div class="stat"><div class="n">27</div><div class="l">Brands</div></div>
